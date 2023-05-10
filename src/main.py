@@ -49,10 +49,8 @@ with st.form("my_form"):
 
         llm_chain = LLMChain(prompt=prompt, llm=llm)
 
-        question = text_review
-
         if prompt:
-            response = llm_chain.run({"text_review": question, "option": option})
+            response = llm_chain.run({"text_review": text_review, "option": option})
             #json printed
             print(response)
             st.text(response) 
